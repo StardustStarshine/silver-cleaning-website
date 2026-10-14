@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b45">
+  <meta name="description" content="Silver Cleaning offers reliable domestic, deep, end-of-tenancy and office cleaning. Contact us for a free quote.">
+  <title>Silver Cleaning | A Cleaner, Fresher Space</title>
+
+  <style>
+    :root {
+      --green: #176b45;
+      --green-dark: #104c32;
+      --mint: #edf7f1;
+      --text: #203027;
+      --muted: #65736a;
+      --white: #ffffff;
+      --border: #dce7df;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span { color: var(--text); }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 8px;
+      padding: 13px 20px;
+      background: var(--green);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button:hover { background: var(--green-dark); }
+
+    .hero {
+      background: var(--mint);
+      padding: 76px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 12px 0 18px;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    .hero p, .section-intro {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button-outline {
+      background: white;
+      color: var(--green);
+      border: 1px solid var(--green);
+    }
+
+    .hero-card {
+      min-height: 310px;
+      border-radius: 20px;
+      padding: 30px;
+      background: linear-gradient(145deg, #d6eee0, #f9fcf9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-icon { font-size: 100px; line-height: 1.3; }
+
+    .hero-card strong {
+      font-size: 23px;
+      color: var(--green-dark);
+    }
+
+    .hero-card p { font-size: 15px; }
+
+    section { padding: 70px 0; }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .service-icon { font-size: 32px; }
+
+    .service h3 { margin: 12px 0 8px; font-size: 18px; }
+
+    .service p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .why {
+      background: #f6f8f6;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      text-align: center;
+    }
+
+    .benefit { padding: 15px; }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .benefit p { color: var(--muted); margin: 0; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info {
+      padding: 28px;
+      background: var(--mint);
+      border-radius: 14px;
+    }
+
+    .contact-info h3 { margin-top: 0; }
+
+    .contact-info p { color: var(--muted); }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-full { grid-column: 1 / -1; }
+
+    label { font-weight: 700; font-size: 14px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd8ce;
+      border-radius: 7px;
+      font: inherit;
+      font-size: 15px;
+      background: white;
+      color: var(--text);
+    }
+
+    textarea { min-height: 105px; resize: vertical; }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .consent input { width: auto; margin-top: 5px; }
+
+    .form-note, #form-status {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    #form-status { margin: 0; }
+
+    footer {
+      padding: 25px 0;
+      background: #203027;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer p { margin: 4px 0; }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #25d366;
+      color: #073b20;
+      border-radius: 30px;
+      padding: 13px 18px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 4px 16px #0002;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0; }
+      .hero-card { min-height: 230px; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .benefits { grid-template-columns: 1fr; gap: 10px; }
+      .contact-grid { gap: 25px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 28px); }
+      .nav { min-height: 66px; }
+      .brand { font-size: 19px; }
+      .nav .button { padding: 10px 12px; font-size: 13px; }
+      .services { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      section { padding: 52px 0; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Silver <span>Cleaning</span></a>
+      <a class="button" href="#contact">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">A cleaner, fresher space</div>
+          <h1>Enjoy a cleaner home without the stress.</h1>
+          <p>
+            Reliable cleaning for homes and workplaces.
+            Tell us what you need and let Silver Cleaning
+            help make your space feel fresh and welcoming.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Request a Free Quote</a>
+            <a class="button button-outline"
+               href="https://wa.me/447518829951?text=Hello%20Silver%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20your%20cleaning%20services.">
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-icon" aria-hidden="true">✨ 🧹 🏡</div>
+          <strong>A fresh start, every time</strong>
+          <p>Friendly service. Cleaner spaces. Less hassle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What we do</div>
+          <h2>Cleaning services to suit you</h2>
+          <p class="section-intro">
+            From regular home cleaning to a thorough deep clean,
+            tell us what you need and we'll discuss your requirements.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🏡</div>
+            <h3>Regular Home Cleaning</h3>
+            <p>Keep your home tidy, fresh and comfortable with routine cleaning.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">✨</div>
+            <h3>Deep Cleaning</h3>
+            <p>A more detailed clean for the areas that need extra attention.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🔑</div>
+            <h3>End of Tenancy</h3>
+            <p>Cleaning support when you're moving out or preparing a property.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🏢</div>
+            <h3>Office Cleaning</h3>
+            <p>Help keep your workplace clean, presentable and welcoming.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why Silver Cleaning</div>
+          <h2>A simple way to get started</h2>
+        </div>
+        <div class="benefits">
+          <div class="benefit">
+            <strong>💬 Easy to contact</strong>
+            <p>Send us a message on WhatsApp or use our enquiry form.</p>
+          </div>
+          <div class="benefit">
+            <strong>🧽 Your cleaning needs</strong>
+            <p>Tell us about your property and the service you're looking for.</p>
+          </div>
+          <div class="benefit">
+            <strong>📩 Quick enquiry</strong>
+            <p>Submit your details so we can follow up about your request.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Request your free cleaning quote</h2>
+          <p class="section-intro">
+            Complete the form and we'll get back to you about your enquiry.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's talk about your cleaning needs</h3>
+            <p>
+              Tell us which service you're interested in and
+              how best to contact you.
+            </p>
+            <p><strong>Prefer WhatsApp?</strong></p>
+            <a class="button"
+               href="https://wa.me/447518829951?text=Hello%20Silver%20Cleaning%2C%20I%27d%20like%20a%20cleaning%20quote.">
+              Message us on WhatsApp
+            </a>
+          </div>
+
+          <form id="contact-form">
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input id="name" name="name" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile number *</label>
+              <input id="phone" name="phone" type="tel"
+                     autocomplete="tel" required>
+            </div>
+
+            <div class="field field-full">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email"
+                     autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="service">Cleaning service *</label>
+              <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option>Regular home cleaning</option>
+                <option>Deep cleaning</option>
+                <option>End of tenancy cleaning</option>
+                <option>Office cleaning</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="postcode">Postcode</label>
+              <input id="postcode" name="postcode"
+                     autocomplete="postal-code">
+            </div>
+
+            <div class="field field-full">
+              <label for="message">Tell us a little more</label>
+              <textarea id="message" name="message"
+                        placeholder="Property type, size, preferred date or other details..."></textarea>
+            </div>
+
+            <div class="field field-full">
+              <label class="consent">
+                <input type="checkbox" name="smsConsent"
+                       value="yes" required>
+                <span>
+                  I agree to be contacted by SMS about this enquiry.
+                  I understand my details will be used to respond to my request.
+                </span>
+              </label>
+            </div>
+
+            <div class="field field-full">
+              <button class="button" type="submit" id="submit-button">
+                Send My Enquiry
+              </button>
+              <p class="form-note">
+                * Required fields. By submitting, you ask Silver Cleaning
+                to contact you about this enquiry.
+              </p>
+              <p id="form-status" role="status" aria-live="polite">
+                The enquiry form will be connected to our SMS automation
+                before the website goes live.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Silver Cleaning</strong></p>
+      <p>Cleaning services for homes and workplaces.</p>
+      <p>&copy; <span id="year"></span> Silver Cleaning. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/447518829951?text=Hello%20Silver%20Cleaning%2C%20I%27d%20like%20to%20ask%20about%20your%20cleaning%20services."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contact Silver Cleaning on WhatsApp">
+    WhatsApp Us
+  </a>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    /*
+      DEMO MODE:
+      The form is not connected to Make yet.
+      We will add the Make webhook and FireText SMS integration
+      after publishing the website. Do not use this as a live
+      customer enquiry form until that connection is tested.
+    */
+    document.getElementById("contact-form").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        document.getElementById("form-status").textContent =
+          "Setup in progress: this form is not connected yet. " +
+          "Please contact us using WhatsApp for now.";
+      }
+    );
+  </script>
+</body>
+</html>
